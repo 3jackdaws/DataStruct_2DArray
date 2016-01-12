@@ -111,7 +111,7 @@ void TestDuplication(Array2D<T> *arr)
     cout<<"************ Change some values **********"<<endl;
     
     (*arr2)[0][0] = 100;
-    (*arr2)[2][2] = 1000;
+    (*arr2)[2][2] = 120;
     DisplayContents(*arr2);
     
     cout<<"************ Testing OP =  **********"<<endl;
