@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ARRAY_H
+#define ARRAY_H
 #include "Exception.h"
 template <typename T>
 class Array
@@ -128,3 +129,4 @@ void Array<T>::setLength(int new_len)
 	m_length = new_len;
 }
 
+#endif

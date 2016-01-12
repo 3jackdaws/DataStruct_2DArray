@@ -6,7 +6,8 @@
 //  Copyright © 2016 Ian Murphy. All rights reserved.
 //
 
-#pragma once
+#ifndef ROW_H
+#define ROW_H
 #include "Exception.h"
 template <typename T> class Array2D;
 
@@ -34,3 +35,5 @@ T & Row<T>::operator[](int col) const
     int index = (m_array2D._col) * m_row + col;
     return m_array2D.m_array[index];
 }
+
+#endif

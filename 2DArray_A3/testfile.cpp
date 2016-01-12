@@ -66,6 +66,10 @@ int main() {
     TestDuplication(strArray);
     TestSpecialCases(strArray);
     TestOtherFeatures(strArray);
+    
+    delete myArray;
+    delete strArray;
+    
     return 0;
 }
 
@@ -118,7 +122,7 @@ void TestDuplication(Array2D<T> *arr)
     
     arr = arr2;
     DisplayContents(*arr);
-    
+    delete arr;
     
 }
 

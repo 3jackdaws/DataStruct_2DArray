@@ -5,7 +5,8 @@
 //  Created by Ian Murphy on 1/9/16.
 //  Copyright © 2016 Ian Murphy. All rights reserved.
 //
-#pragma once
+#ifndef ARRAY2D_H
+#define ARRAY2D_H
 #include "Row.h"
 #include "Array.h"
 #include "Exception.h"
@@ -55,7 +56,6 @@ Array2D<T>::Array2D(const Array2D<T> & cp) : _col(cp._col), _row(cp._row), m_arr
 template <typename T>
 Array2D<T>::~Array2D()
 {
-    
 }
 
 
@@ -132,6 +132,6 @@ T & Array2D<T>::Select(int row, int col)
     return m_array[row*col+col];
 }
 
-
+#endif
 
 
