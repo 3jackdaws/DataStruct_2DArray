@@ -33,6 +33,8 @@ private:
     Array<T> m_array;
     int _row;
     int _col;
+    
+    void Alter(int rows, int cols);
 };
 
 template <typename T>
@@ -99,8 +101,8 @@ void Array2D<T>::setRow(int rows)
     }
     else if(rows > 0)
     {
-        _row = rows;
-        m_array.setLength(_row*_col);
+        Alter(rows, _col);
+//        _row = rows;
     }
     else{
         throw Exception("InvalidRowNumberException");
@@ -122,8 +124,8 @@ void Array2D<T>::setColumn(int col)
     }
     else if(col > 0)
     {
-        _col = col;
-        m_array.setLength(_row*_col);
+        Alter(_row, col);
+//        _col = col;
     }
     else{
         throw Exception("InvalidColumnNumberException");
@@ -134,6 +136,30 @@ template <typename T>
 T & Array2D<T>::Select(int row, int col)
 {
     return m_array[row*_col+col];
+}
+
+template <typename T>
+void Array2D<T>::Alter(int rows, int cols)
+{
+    int l_rows = rows;
+    int l_cols = cols;
+    
+    if(rows > _row)
+        l_rows = _row;
+    if(cols > _col)
+        l_cols = _col;
+    
+    Array2D<T> newArray(rows, cols);
+    for (int row = 0; row<l_rows; row++)
+    {
+        for (int col = 0; col<l_cols; col++)
+        {
+            newArray[row][col] = (*this)[row][col];
+        }
+    }
+    m_array = newArray.m_array;
+    _row = newArray._row;
+    _col = newArray._col;
 }
 
 #endif

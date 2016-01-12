@@ -7,6 +7,7 @@
 //
 #include <string>
 #include <iostream>
+#include <iomanip>
 using std::cout;
 using std::endl;
 #include "Array2D.h"
@@ -82,8 +83,9 @@ void DisplayContents(Array2D<T> &arr)
     for (int row = 0; row<row_s; row++) {
         for(int col = 0; col< col_s; col++)
         {
-            cout<<"["<<row<<"]"<<"["<<col<<"]: "<<arr[row][col]<<endl;
+            cout<<std::setw(3)<<arr[row][col];
         }
+        cout<<endl;
     }
 }
 
@@ -96,8 +98,9 @@ void DisplayContents(const Array2D<T> &arr)
     for (int row = 0; row<row_s; row++) {
         for(int col = 0; col< col_s; col++)
         {
-            cout<<"["<<row<<"]"<<"["<<col<<"]: "<<arr[row][col]<<endl;
+            cout<<std::setw(4)<<arr[row][col];
         }
+        cout<<endl;
     }
 }
 
