@@ -169,6 +169,11 @@ void TestOtherFeatures(Array2D<T> *arr)
     arr->setColumn(6);
     DisplayContents(*arr);
     
+    cout<<"\n************* Testing Select **************"<<endl;
+    cout<<"\n************* Set [2][2] to 123 **************"<<endl;
+    (*arr)[2][2] = 123;
+    cout<<"\n************* Selecting [2][2] **************"<<endl;
+    cout<<arr->Select(2,2)<<endl;
     TestConstness(*arr);
     
 }
@@ -179,6 +184,6 @@ void TestConstness(const Array2D<T> &arr)
     cout<<"\n************* TESTING CONST METHODS **************"<<endl;
     cout<<"\n************* Testing modify const values **************\nBefore"<<endl;
     DisplayContents(arr);
-    //arr[0][0] = 90;       won't compile, doesn't allow assignment
+    //arr[0][0] = 90;       //won't compile, doesn't allow assignment
     DisplayContents(arr);
 }
